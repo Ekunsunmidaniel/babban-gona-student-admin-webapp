@@ -1,0 +1,30 @@
+.login-screen {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 1440px;
+  height: 789px;
+  padding: 98px 392px 99px 392px;
+}
+
+.login-screen-content {
+  display: flex;
+  flex-direction: column;
+  gap: 53px;
+  width: 512px;
+  height: 494px;
+  /* align-items: center; */
+  justify-content: center;
+}
+.pin-authentication-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Pin-Auth-Links {
+  display: flex;
+  gap: 25px;
+  margin-left: auto;
+  margin-top: 15px;
+  font-size: 20px;
+}
