@@ -20,15 +20,14 @@ import DoNotDisturbAltIcon from '@mui/icons-material/DoNotDisturbAlt'
 function StudentListTable() {
 	const [studentList, setStudentList] = useState([])
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	const fetchStudents = useCallback(() => {
+	const fetchStudents = () => {
 		let students = JSON.parse(localStorage.getItem('students')) || studentList
 		setStudentList(students)
-	})
+	}
 
 	useEffect(() => {
 		fetchStudents()
-	}, [fetchStudents])
+	}, [])
 
 	const navigate = useNavigate()
 
