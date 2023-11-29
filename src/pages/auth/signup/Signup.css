@@ -2,14 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center; */
-  /* width: 1440px;
+/* width: 1440px;
   height: 789px;
   padding: 98px 392px 99px 392px; */
 
-
 .Digi-Reg-Logo {
-  width: 100px;
-  height: 100px;
+	width: 100px;
+	height: 100px;
 }
 
 /* .Signup-content {
@@ -19,7 +18,7 @@
   width: 512px;
   height: 494px;
   /* align-items: center; */
-  /* justify-content: center;
+/* justify-content: center;
 } */
 
 /* .Signup-screen-header {
@@ -50,4 +49,3 @@
 /* /* .Signup-text{
     color: #1f7a8c;
 } */
- /* // <Box></Box
