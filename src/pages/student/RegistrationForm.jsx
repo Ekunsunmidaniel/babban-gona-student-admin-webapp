@@ -5,7 +5,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 import React, { useState } from 'react'
-import WebcamCapture from '/src/components/Webcam/WebcamCapture'
+import WebcamCapture from '/src/components/webcam/WebcamCapture'
 import { useFormik } from 'formik'
 import { studentRegistrationValidationSchema } from '/src/schemaValidation'
 import { Gender } from '/src/utils/enums'
