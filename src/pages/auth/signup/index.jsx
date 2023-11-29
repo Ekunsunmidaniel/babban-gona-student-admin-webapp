@@ -1,6 +1,6 @@
 import '../signIn/index.css'
 import { Typography, Box } from '@mui/material'
-import './signup.css'
+// import './signup.css'
 // import SignupForm from './SignupForm.jsx'
 import { Logo } from '../../../assets/Svg.jsx'
 
