@@ -84,25 +84,30 @@ function StudentListTable() {
 		navigate('/student/register')
 	}
 
+	const convertToCSV = (dataArray) => {
+		const header = Object.keys(dataArray[0]).join(',')
+		const rows = dataArray.map((obj) => Object.values(obj).join(','))
+		return `${header}\n${rows.join('\n')}`
+	}
+
+	const downloadCSV = (csvData, fileName) => {
+		const blob = new Blob([csvData], { type: 'text/csv' })
+		const link = document.createElement('a')
+		link.href = window.URL.createObjectURL(blob)
+		link.download = fileName
+		link.click()
+	}
+
 	const handleExport = () => {
-		const convertToCSV = (dataArray) => {
-			const header = Object.keys(dataArray[0]).join(',')
-			const rows = dataArray.map((obj) => Object.values(obj).join(','))
-			return `${header}\n${rows.join('\n')}`
-		}
-
-		const downloadCSV = (csvData, fileName) => {
-			const blob = new Blob([csvData], { type: 'text/csv' })
-			const link = document.createElement('a')
-			link.href = window.URL.createObjectURL(blob)
-			link.download = fileName
-			link.click()
-		}
-
 		const fileName = 'student_data.csv'
 		let students = JSON.parse(localStorage.getItem('students')) || studentList
-		const csvData = convertToCSV(students)
-		downloadCSV(csvData, fileName)
+
+		if (students.length > 0) {
+			const csvData = convertToCSV(students)
+			downloadCSV(csvData, fileName)
+		} else {
+			alert('You cannot perform this action until you have registered students')
+		}
 	}
 
 	return (
@@ -119,11 +124,13 @@ function StudentListTable() {
 					/>
 				</Grid>
 
-				<Grid item xs={0.5}>
-					<IconButton aria-label='edit'>
-						<FileDownloadIcon onClick={handleExport} />
-					</IconButton>
-				</Grid>
+				{studentList.length > 0 && (
+					<Grid item xs={0.5}>
+						<IconButton aria-label='edit'>
+							<FileDownloadIcon onClick={handleExport} />
+						</IconButton>
+					</Grid>
+				)}
 
 				<Grid item>
 					<Button variant='outlined' startIcon={<AddIcon />} onClick={navigateToStudentRegistrationPage}>
