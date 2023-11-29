@@ -10,7 +10,6 @@ export default defineConfig({
 			src: resolve(__dirname, 'src'),
 		},
 	},
-	optimizeDeps: {},
 	esbuild: {
 		loader: 'jsx',
 		include: /src\/.*\.jsx?$/,
